@@ -27,16 +27,15 @@ db = pymysql.connect("localhost","testuser","test1234","testuser" )
 # 使用cursor()方法获取操作游标 
 cursor = db.cursor()
 
-soup1 = soup.replace(' " ',r' \" ') #這邊有狀況
+soup1 = soup.prettify()#把soup變成string
 
-print (soup1)
+soup2 = soup1.replace('"',r'\"') #取代掉"
 
-'''
 # SQL 插入语句(有問題無法用將變數插入SQL)*要取代soup裡面的"符號
 sql = 'INSERT INTO test(url, website, code, time) \
       VALUES ( "%s", "%s", "%s", "%s" )' \
-      % ( url, "http://www.gomaji.com", soup1, now)
-print(now)
+      % ( url, "http://www.gomaji.com", soup2, now)
+
 try:
    # 执行sql语句
    cursor.execute(sql)
@@ -49,4 +48,4 @@ except:
 # 关闭数据库连接
 db.close()
 
-'''
+print ('最新處理時間：'+ now)
