@@ -21,11 +21,11 @@ soup = BeautifulSoup(res.text,'html.parser')
 
 #以下是取出需要的資料------------------以下是第二階段
 title = 'div.program h1'
-#標題
+#標題 *div.class名稱為program 裡面的h1
 price = 'div.spe-pri h3'
-#價格
+#價格 *div.class名稱為spe-pri 裡面的h3
 url1 = 'div.spe-pri a'
-#超連結
+#超連結 *div.class名稱為spe-pri 裡面的a
 
 title0 = soup.select(title)
 price0 = soup.select(price)
@@ -38,21 +38,4 @@ for art in title0 + price0 + url2:
       print(art)
       print ('http://www.gomaji.com/' , art.get('href'))
       
-
-'''
-for art in title0:
-      print(art)
-      
-      for art in price0:
-            print(art)
-            break
-            for art in url2:
-                  print ('http://www.gomaji.com/' + art.get('href'))
-                  break
-'''
-            
-
-
-
-
 print('資料抓取日期：' + now)
