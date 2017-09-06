@@ -33,9 +33,11 @@ url2 = soup.select(url1)
 #articles2 = soup.find_all(articles2['href'])
 #帶入變數
 
-
+'''
 for art in title0 + price0 + url2:
-      print(art)
-      print ('http://www.gomaji.com/' , art.get('href'))
-      
+      #print(art)
+      #print ('http://www.gomaji.com/' , art.get('href'))
+      #print (art.get('href'))
+'''
+
 print('資料抓取日期：' + now)
