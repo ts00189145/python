@@ -30,14 +30,16 @@ cursor = db.cursor()
 
 soup1 = soup.prettify()#把soup變成string
 
-soup2 = soup1.replace('"',r'\"') #取代掉"
+soup2 = soup1.replace('"',r'\"') #取代"為\"
 
 # SQL 插入语句(有問題無法用將變數插入SQL)
 sql = 'INSERT INTO test(url, website, code, time) \
       VALUES ( "%s", "%s", "%s", "%s" )' \
       % ( url, "http://www.gomaji.com", soup2, now)
 
-#print(sql) #測試輸出SQL語法是否有錯
+print('sqlstart1659')
+print(sql) #測試輸出SQL語法是否有錯
+print('sqlend1659')
 
 try:
    cursor.execute(sql)
