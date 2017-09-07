@@ -23,23 +23,27 @@ soup = BeautifulSoup(res.text,'lxml')
 
 #print (soup)
 
+soup1 = soup.prettify()#把soup變成string
+
+soup2 = soup1.replace('"',r'\"') #取代"為\"
+
+soup3 = soup2.replace(",",r"\,") #取代,為\,
+
+#以下為操作資料庫語法
 db = pymysql.connect("localhost","testuser","test1234","testuser" )
 
 # 使用cursor()方法获取操作游标 
 cursor = db.cursor()
 
-soup1 = soup.prettify()#把soup變成string
-
-soup2 = soup1.replace('"',r'\"') #取代"為\"
-
 # SQL 插入语句(有問題無法用將變數插入SQL)
-sql = 'INSERT INTO test(url, website, code, time) \
-      VALUES ( "%s", "%s", "%s", "%s" )' \
-      % ( url, "http://www.gomaji.com", soup2, now)
+sql = """INSERT INTO test(url, website, code, time)\
+      VALUES ( "%s", "%s", "%s", "%s" )\
+      % (url, "http://www.gomaji.com/",soup3,now)"""
 
-print('sqlstart1659')
+print('sqlstart1000')
 print(sql) #測試輸出SQL語法是否有錯
-print('sqlend1659')
+print('sqlend1000')
+
 
 try:
    cursor.execute(sql)
