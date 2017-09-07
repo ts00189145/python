@@ -1,8 +1,10 @@
-#20170906soup仍無法輸入資料庫
+#20170907soup仍無法輸入資料庫要把之前的程式cp回來喔！
 import requests
 import time
-import pymysql
+import pymysql.cursors
 #使用requests套件、時間套件、Pymysql
+from bs4 import BeautifulSoup
+#使用BeauitfulSoup
 
 now_data = time.strftime("%Y/%m/%d")
 now_time = time.strftime("%H:%M:%S")
@@ -16,8 +18,7 @@ url = 'http://www.gomaji.com/index.php?city=Taiwan&category_id=264'
 res = requests.get(url)
 #從GoMaJi取回網頁程式碼
 
-from bs4 import BeautifulSoup
-#使用BeauitfulSoup
+
 
 soup = BeautifulSoup(res.text,'lxml')
 
@@ -29,31 +30,37 @@ soup2 = soup1.replace('"',r'\"') #取代"為\"
 
 soup3 = soup2.replace(",",r"\,") #取代,為\,
 
-#以下為操作資料庫語法
-db = pymysql.connect("localhost","testuser","test1234","testuser" )
+import pymysql.cursors
 
-# 使用cursor()方法获取操作游标 
-cursor = db.cursor()
-
-# SQL 插入语句(有問題無法用將變數插入SQL)
-sql = """INSERT INTO test(url, website, code, time)\
-      VALUES ( "%s", "%s", "%s", "%s" )\
-      % (url, "http://www.gomaji.com/",soup3,now)"""
-
-print('sqlstart1000')
-print(sql) #測試輸出SQL語法是否有錯
-print('sqlend1000')
-
+# Connect to the database
+connection = pymysql.connect(host='localhost',
+                             user='testuser',
+                             password='test1234',
+                             db='testuser',
+                             charset='utf8mb4',
+                             cursorclass=pymysql.cursors.DictCursor)
 
 try:
-   cursor.execute(sql)
-   # 執行sql語法
-   db.commit()
-   # 提交到資料庫執行
-except:
-   db.rollback()
-   # 如果有錯誤則回滾
-db.close()
-# 關閉與資料庫的連接
+    with connection.cursor() as cursor:
+        # Create a new record
+        sql = "INSERT INTO `test` (`url`, `website` , `code` , `time`) VALUES (%s, %s,%s, %s)"
+        cursor.execute(sql, (url, "http://www.gomaji.com", soup3, now))
+
+    # connection is not autocommit by default. So you must commit to save
+    # your changes.
+    connection.commit()
+'''SELECT先不用看拉
+    with connection.cursor() as cursor:
+        # Read a single record
+        sql = "SELECT `id`, `password` FROM `users` WHERE `email`=%s"
+        cursor.execute(sql, ('webmaster@python.org',))
+        result = cursor.fetchone()
+        print(result)
+'''
+finally:
+    connection.close()
+
+
+
 
 print ('最新處理時間：'+ now)
