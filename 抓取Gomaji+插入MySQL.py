@@ -1,5 +1,7 @@
-#20170907soup仍無法輸入資料庫要把之前的程式cp回來喔！
-#這邊是要把網頁全部的程式碼insert進去資料庫
+'''
+取得資料->解析->取代"與,->輸入資料庫（這邊有問題）*無法輸入
+**20170907soup仍無法輸入資料庫要把之前的程式cp回來喔！
+'''
 import requests
 import time
 import pymysql
@@ -39,17 +41,17 @@ cursor = db.cursor()
 
 
 
-sql = 'INSERT INTO test(url, website, code, time) \
-        VALUES ( "%s", "%s", "%s", "%s" )' \
-        % ( url, "http://www.gomaji.com", soup3, now)
+sql = "INSERT INTO test (url, website, code, time) VALUES ( '%s', '%s', '%s', '%s' )"
+data = ( url, "http://www.gomaji.com", soup3, now)
 
 try:
-    cursor.execute(sql)
+    cursor.execute(sql % data)
     # 執行sql語法
     db.commit()
     # 提交到資料庫執行
 except:
     db.rollback()
+    print ("MySQL DB Error")
     # 如果有錯誤則回滾
     db.close()
  # 關閉與資料庫的連接
