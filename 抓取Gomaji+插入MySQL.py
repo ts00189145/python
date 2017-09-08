@@ -1,7 +1,7 @@
 #20170907soup仍無法輸入資料庫要把之前的程式cp回來喔！
 import requests
 import time
-import pymysql.cursors
+import pymysql
 #使用requests套件、時間套件、Pymysql
 from bs4 import BeautifulSoup
 #使用BeauitfulSoup
@@ -30,37 +30,28 @@ soup2 = soup1.replace('"',r'\"') #取代"為\"
 
 soup3 = soup2.replace(",",r"\,") #取代,為\,
 
-import pymysql.cursors
 
-# Connect to the database
-connection = pymysql.connect(host='localhost',
-                             user='testuser',
-                             password='test1234',
-                             db='testuser',
-                             charset='utf8mb4',
-                             cursorclass=pymysql.cursors.DictCursor)
+db = pymysql.connect("localhost","testuser","test1234","testuser" )
+ 
+ # 使用cursor()方法获取操作游标 
+cursor = db.cursor()
+
+
+
+sql = 'INSERT INTO test(url, website, code, time) \
+        VALUES ( "%s", "%s", "%s", "%s" )' \
+        % ( url, "http://www.gomaji.com", soup3, now)
 
 try:
-    with connection.cursor() as cursor:
-        # Create a new record
-        sql = "INSERT INTO `test` (`url`, `website` , `code` , `time`) VALUES (%s, %s,%s, %s)"
-        cursor.execute(sql, (url, "http://www.gomaji.com", soup3, now))
-
-    # connection is not autocommit by default. So you must commit to save
-    # your changes.
-    connection.commit()
-'''SELECT先不用看拉
-    with connection.cursor() as cursor:
-        # Read a single record
-        sql = "SELECT `id`, `password` FROM `users` WHERE `email`=%s"
-        cursor.execute(sql, ('webmaster@python.org',))
-        result = cursor.fetchone()
-        print(result)
-'''
-finally:
-    connection.close()
-
-
+    cursor.execute(sql)
+    # 執行sql語法
+    db.commit()
+    # 提交到資料庫執行
+except:
+    db.rollback()
+    # 如果有錯誤則回滾
+    db.close()
+ # 關閉與資料庫的連接
 
 
 print ('最新處理時間：'+ now)
