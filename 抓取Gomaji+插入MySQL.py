@@ -1,4 +1,5 @@
 #20170907soup仍無法輸入資料庫要把之前的程式cp回來喔！
+#這邊是要把網頁全部的程式碼insert進去資料庫
 import requests
 import time
 import pymysql
@@ -31,7 +32,7 @@ soup2 = soup1.replace('"',r'\"') #取代"為\"
 soup3 = soup2.replace(",",r"\,") #取代,為\,
 
 
-db = pymysql.connect("localhost","testuser","test1234","testuser" )
+db = pymysql.connect("localhost","testuser","test1234","testuser")
  
  # 使用cursor()方法获取操作游标 
 cursor = db.cursor()

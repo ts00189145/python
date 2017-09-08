@@ -1,3 +1,5 @@
+#這邊已經把資料抓回來，已經清除不必要的資料，並且for印出來
+#上述功能已經做到20170908
 import requests
 import time
 #使用requests套件、時間套件
@@ -30,14 +32,24 @@ url1 = 'div.spe-pri a'
 title0 = soup.select(title)
 price0 = soup.select(price)
 url2 = soup.select(url1)
-#articles2 = soup.find_all(articles2['href'])
 #帶入變數
 
-'''
-for art in title0 + price0 + url2:
-      #print(art)
-      #print ('http://www.gomaji.com/' , art.get('href'))
-      #print (art.get('href'))
-'''
+title0len = len(title0)
+price0len = len(price0)
+url2len = len(url2)
+#算出個別陣列有幾筆資料
+
+print("title0有:",len(title0),"個值") #了解這個陣列有多少值
+print("price0:",len(price0),"個值") #了解這個陣列有多少值
+print("url2:",len(url2),"個值") #了解這個陣列有多少值
+
+
+for i in range(0,len(title0),1):
+    print(title0[i].text,price0[i].text)
+    print("%s%s " % ("http://www.gomaji.com/",url2[i+2].get('href')))
+    #上面url+2是因為前兩筆title是空的然後後面有
+    i = i + 1
+    #成功印出來了！！
+    
 
 print('資料抓取日期：' + now)
