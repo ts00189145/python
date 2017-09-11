@@ -1,6 +1,5 @@
 '''
 取得資料->解析名字價格網址->算出名字價格網址有多少個->帶入資料庫
-**無法寫入資料庫
 '''
 #-*- coding: utf-8 -*-，
 #coding = utf-8
@@ -48,19 +47,28 @@ print("title0有:",len(title0),"個值") #了解這個陣列有多少值
 print("price0:",len(price0),"個值") #了解這個陣列有多少值
 print("url2:",len(url2),"個值") #了解這個陣列有多少值
 '''
-db = pymysql.connect("localhost","testuser","test1234","testuser")
+db = pymysql.connect(
+    host='localhost',
+    port=3306,
+    user='testuser',
+    passwd='test1234',
+    db='testuser',
+    charset='utf8'
+)
 #資料庫、使用者、密碼、資料庫
 
 cursor = db.cursor()
 #使用cursor()方法获取操作游标 
 
 for i in range(0,len(title0),1):
-    sql = 'INSERT INTO test1 (title, price, url, time) VALUES ( "%s", "%s", "%s", "%s" )'
-    data = ( title0[i].text, price0[i].text, url2[i+2].get('href'), now)
+    #sql = 'INSERT INTO test1 (title, price, url, time) VALUES ( "%s", "%s", "%s", "%s" )'
+    #data = ( title0[i].text, price0[i].text, url2[i+2].get('href'), now)
+    cursor.execute('insert into '+ 'test1 (title, price, url, time)' +' values(%s,%s,%s,%s)', 
+                   ( title0[i].text, price0[i].text, url2[i+2].get('href'), now) ) 
     i = i + 1
     #上面url+2是因為前兩筆title是空的然後後面有
 try:
-    cursor.execute(sql % data)
+    #cursor.execute(sql % data)
     # 執行sql語法
     db.commit()
     # 提交到資料庫執行
@@ -72,5 +80,5 @@ except:
     db.close()
     # 關閉與資料庫的連接
 
-print(sql)#語法是成功的但資料庫沒有資料輸入進去
+#print(sql)#語法是成功的但資料庫沒有資料輸入進去
 print('資料抓取日期：' + now)

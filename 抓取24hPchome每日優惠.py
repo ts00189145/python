@@ -13,7 +13,7 @@ today = time.strftime("%Y%m%d")
 url = 'http://24h.pchome.com.tw/onsale/v3/'+ today +'/'
 #取得今天的網址
 
-print (url) 
+#print (url) 
 #印出今天日期的URL
 
 
@@ -26,14 +26,14 @@ pageSource = driver.page_source  # 取得網頁原始碼
 
 soup = BeautifulSoup(pageSource,"lxml")
 #將資料用lxml裝起來放置到soup
-print(soup)
+#print(soup)
 
-driver.close()  # 關閉瀏覽器
-
-
+driver.quit()  # 關閉瀏覽器
 
 
-'''下面尚未更改20170905
+
+
+
 #以下是取出需要的資料------------------以下是第二階段
 title = 'dl.onsale_box dd'
 #標題
@@ -52,6 +52,6 @@ for art in articles0 + articles1 + articles2 :
 
    print(art)
    #print(art['href'],art.text)
-'''  
+
 
 print('資料抓取日期：' + now_data + ' ' + now_time)
