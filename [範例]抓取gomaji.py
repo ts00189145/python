@@ -2,6 +2,7 @@
 取得資料->解析名字價格網址->算出名字價格網址有多少個->印出來
 上述功能已經做到20170908
 '''
+# -*- coding: utf-8 -*-
 import requests
 import time
 #使用requests套件、時間套件
