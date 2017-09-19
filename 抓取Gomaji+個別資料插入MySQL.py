@@ -13,7 +13,7 @@ now_time = time.strftime("%H:%M:%S")
 now = now_data + ' ' + now_time
 #取出今天日期、時間，並整成變數now
 
-url0 = 'http://www.gomaji.com/index.php?city=Taiwan&category_id=264'
+url0 = 'http://www.gomaji.com/index.php?city=Taiwan&category_id=31'
 
 res = requests.get(url0)
 #從GoMaJi取回網頁程式碼
