@@ -36,15 +36,13 @@ db = pymysql.connect(
 cursor = db.cursor()
 #使用cursor()方法获取操作游标 
 
-#這邊要寫迴圈***這邊有問題
+#這邊要寫迴圈
 for row in csvReader:
     #print( type( row[3]  ) )
 
     
-    cursor.execute('insert into '+ 'data01 (organ, dataname, browse, download,score,data)' +' values(%s,%s,%s,%s,%s,%s)', 
-                   ( row[0] , row[1] , row[2] , row[3] , row[4] ,  now) ) 
-
-
+    cursor.execute('insert into '+ 'data01 (organ, dataname, browse, download, score, data)' + ' values( %s, %s, %s, %s, %s, %s)', 
+                   ( row[0] , row[1] , row[2] , row[3] , row[4] , now) ) 
 
 try:
     # 執行sql語法
