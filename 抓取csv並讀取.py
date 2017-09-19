@@ -1,22 +1,20 @@
 # -*- coding: utf-8 -*-
-import time
-#使用時間套件
-
-
-#正確板
+#帶入套件
 from urllib.request import urlopen
 from io import StringIO
 import csv
 import pymysql.cursors
+#import pandas as pd
+import time
 
 #抓取csv並讀取
 url = urlopen('http://file.data.gov.tw/event/dataset.csv').read().decode('utf-8')
 datafile = StringIO(url)
 csvReader = csv.reader(datafile)
 
-'''顯示所有資料
-for row in csvReader:
-    print(row)
+'''
+url = pd.read_csv('http://file.data.gov.tw/event/dataset.csv')
+url# 這比較好
 '''
 
 #取出今天日期、時間，並整成變數now
@@ -40,6 +38,9 @@ cursor = db.cursor()
 
 #這邊要寫迴圈***這邊有問題
 for row in csvReader:
+    #print( type( row[3]  ) )
+
+    
     cursor.execute('insert into '+ 'data01 (organ, dataname, browse, download,score,data)' +' values(%s,%s,%s,%s,%s,%s)', 
                    ( row[0] , row[1] , row[2] , row[3] , row[4] ,  now) ) 
 
@@ -50,6 +51,7 @@ try:
     db.commit()
     # 提交到資料庫執行
     print("成功插入")
+    db.close()
 except:
     db.rollback()
     print ("MySQL DB Error")
