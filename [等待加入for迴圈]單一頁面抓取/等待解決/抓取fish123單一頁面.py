@@ -25,25 +25,36 @@ soup = BeautifulSoup(pageSource,"lxml")
 driver.quit()  # 關閉瀏覽器
 
 #以下是取出需要的資料------------------以下是第二階段
-title = 'div.deal-title  h1'
+images = 'img.item-img'
+#介紹照片
+title = 'h1.title'
 #標題 *div.class名稱為product_introduction 裡面的h3
-sintro = 'div.deal-title h2'
+sintro = 'figcaption.caption p'
 #小介紹
-price = 'div#price'
-#價格
+original_price = 'span.del'#有點問題
+#原價
+special_price = 'div#price'
+#特價
 intro0 = 'div.content_wapper'
 #主介紹
+specification = 'div.detail-info p'
+#規格
 
 #資料轉換區
+images0 = soup.select(images)
 title0 = soup.select(title)
 sintro0 = soup.select(sintro)
-price0 = soup.select(price)
+original_price0 = soup.select(original_price)
+special_price0 = soup.select(special_price)
 intro1 = soup.select(intro0)
+specification0 = soup.select(specification)
 
-
+print('圖片：' , images0)#資料已經乾淨
 print('標題：' , title0[0].text)#資料已經乾淨
 print('小介紹：' , sintro0[0].text)#資料已經盡可能乾淨
-print('價格：' , price0[0].text)#資料已經盡可能乾淨
+print('原價：' , original_price0[0].text)#資料已經盡可能乾淨
+print('特價：' , special_price0[0].text)#資料已經盡可能乾淨
 print('介紹區：' , intro1)#資料已經盡可能乾淨
+print('規格：' , specification0)
 
 print('資料抓取日期：' + now)

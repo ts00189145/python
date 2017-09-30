@@ -25,6 +25,8 @@ soup = BeautifulSoup(pageSource,"lxml")
 driver.quit()  # 關閉瀏覽器
 
 #以下是取出需要的資料------------------以下是第二階段
+images = 'div.cnt_mod002.cover_img img'#尚未完成
+#圖片
 title = 'div.mod.prd001  h1'
 #標題 *div.class名稱為product_introduction 裡面的h3
 price = 'ul.price '
@@ -33,11 +35,12 @@ intro0 = 'div.sec_product01 '
 #主介紹
 
 #資料轉換區
+images = soup.select(images)
 title0 = soup.select(title)
 price0 = soup.select(price)
 intro1 = soup.select(intro0)
 
-
+print('圖片網址：',images[0])#
 print('標題：' , title0[0].text)#資料已經乾淨
 print('價格：' , price0[0].text)#資料已經盡可能乾淨
 print('介紹區：' , intro1)#資料已經盡可能乾淨

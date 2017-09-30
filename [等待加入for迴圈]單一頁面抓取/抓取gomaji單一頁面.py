@@ -9,7 +9,7 @@ now_time = time.strftime("%H:%M:%S")
 now = now_data + ' ' + now_time
 #取出今天日期、時間，並整成變數now
 
-url0 = 'http://www.gomaji.com/index-sub.php?city=Taiwan&pid=173027'
+url0 = 'http://www.gomaji.com/Taiwan_p175545.html'
 
 
 from selenium import webdriver
@@ -25,6 +25,8 @@ soup = BeautifulSoup(pageSource,"lxml")
 driver.quit()  # 關閉瀏覽器
 
 #以下是取出需要的資料------------------以下是第二階段
+images = 'div.gallery'
+#圖片
 title = 'div.today-new-block h1'
 #標題 *div.class名稱為product_introduction 裡面的h3
 price = 'div.product-status  p'
@@ -32,14 +34,19 @@ price = 'div.product-status  p'
 intro0 = 'div.intro-wrap p'
 #主介紹
 
+
 #資料轉換區
+images0 = soup.select(images)
 title0 = soup.select(title)
 price0 = soup.select(price)
 intro1 = soup.select(intro0)
 
 
-print('標題：' , title0[0].text)#資料已經乾淨
-print('價格：' , price0)#資料不乾淨
+
+print('圖片：' , images0[0])#
+print('標題：' , title0[0].text.strip())#資料已經乾淨
+print('價格：' , price0[1].text.strip())#資料不乾淨
 print('介紹區：' , intro1)#資料不乾淨
+
 
 print('資料抓取日期：' + now)
