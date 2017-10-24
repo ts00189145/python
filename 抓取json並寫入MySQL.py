@@ -10,7 +10,7 @@ import pandas as pd
 import time
 
 #抓回資料
-data = pd.read_json('http://data.coa.gov.tw/Service/OpenData/FromM/FarmTransData.aspx')
+data = pd.read_json('http://edbkcg.kcg.gov.tw/prices/PricesToJson.php')
 
 #取出今天日期、時間，並整成變數now
 now_data = time.strftime("%Y/%m/%d")
