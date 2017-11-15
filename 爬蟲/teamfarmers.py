@@ -35,76 +35,63 @@ now_data = time.strftime("%Y-%m-%d")
 now_time = time.strftime("%H:%M:%S")
 now = now_data + ' ' + now_time
 
-starturl = 'http://www.books.com.tw/web/sys_midm/food/1017?loc=P_002_1_003'
+
+urllist = [
+        'http://teamfarmers.com.tw/?product_cat=underwear',
+        'http://teamfarmers.com.tw/?product_cat=accessories',
+        'http://teamfarmers.com.tw/?product_cat=posters',
+        'http://teamfarmers.com.tw/?product_cat=albums']
+
+
 #起始頁
 
 #將網頁資料取回
 
-driver = webdriver.PhantomJS(executable_path=r'C:\Users\IMITA-PC-13\Desktop\phantomjs-2.1.1-windows\bin\phantomjs')  # PhantomJs for Windows
-#driver = webdriver.Chrome(r"C:\selenium_driver_chrome\chromedriver.exe") #Windows
+#driver = webdriver.PhantomJS(executable_path=r'C:\Users\IMITA-PC-13\Desktop\phantomjs-2.1.1-windows\bin\phantomjs')  # PhantomJs for Windows
+driver = webdriver.Chrome(r"C:\selenium_driver_chrome\chromedriver.exe") #Windows
 #driver = webdriver.PhantomJS(executable_path='/opt/phantomjs/bin/phantomjs')
 
-
-
-driver.get(starturl)  # 輸入網址，交給瀏覽器 
-pageSource = driver.page_source  # 取得網頁原始碼
-soup = BeautifulSoup(pageSource,"lxml") #將資料用lxml裝起來放置到soup
-
-page = 'div.page span'
-page0 = soup.select(page)
-strpage = int(page0[0].text) #取得總頁數
-
-for pagenum in range(1,strpage+1):
-    url1 = 'http://www.books.com.tw/web/sys_midm/food/1017?o=5&page=' + str(pagenum)
-    print('第'+ str(pagenum) +'頁')
-    #print(url1)
-    pagenum = pagenum + 1
-    
-    #送出頁數
-    driver.get(url1)
+urllen = len(urllist)
+for link in range(urllen):#取出第link個連結
+    print ('第',link,'個：', urllist[link])
+    driver.get(urllist[link])  # 輸入網址，交給瀏覽器 
     pageSource = driver.page_source  # 取得網頁原始碼
     soup = BeautifulSoup(pageSource,"lxml") #將資料用lxml裝起來放置到soup
-    #time.sleep(1)
-    
+
     #取得頁面所有的超連結
-    allurl = 'a.cover.cov_a'
+    allurl = 'div.product-title a'
     allurl0 = soup.select(allurl)
     urllen0 = len(allurl0)
     print('此頁面共' + str(urllen0) +'件商品')
-
     
-    
-    #將所有取得的超連結做for迴圈將資料寫入資料庫
+        
+        
+        #將所有取得的超連結做for迴圈將資料寫入資料庫
     for allprod in range(0,urllen0):
         #print (allurl0[allprod].get('href'))
-        print('第',allprod,'樣商品，共計',urllen0,'樣')
-        
+        print('第',allprod+1,'樣商品，共計',urllen0,'樣')
+
         driver.get(allurl0[allprod].get('href'))  # 輸入超連結，交給瀏覽器 
         pageSource = driver.page_source  # 取得網頁原始碼
         soup = BeautifulSoup(pageSource,"lxml") #將資料用lxml裝起來放置到soup
         
         
-       #以下是取出需要的資料------------------以下是第二階段
-        main_images = 'div.cnt_mod002.cover_img img'#尚未完成
+        #以下是取出需要的資料------------------以下是第二階段
+        main_images = 'a.woocommerce-main-image.product-image img'
         #主要圖片
-        main_name = 'div.mod.prd001 h1'
+        main_name = 'h1.product_title'
         #主標題
-        original_price = 'ul.price li'
+        original_price = 'p.price span'
         #原價
-        special_price = 'strong.price01'
+        special_price = ''
         #特價
-        file = 'div.sec_product01 '
+        file = 'div.wpb_text_column'
         #文案文字
-        
-        #資料轉換區
-        main_images0 = soup.select(main_images)
-        main_name0 = soup.select(main_name)
-        original_price0 = soup.select(original_price)
-        special_price0 = soup.select(special_price)
-        file0 = soup.select(file)
-        
-        #資料取出及測試區，如果沒有資料則輸入空白
+        specification = 'div.short-description'
+
+
         try:
+            main_images0 = soup.select(main_images)
             #main_images1 = main_images0[0]
             imgnum= 0
             main_images1 = []
@@ -116,12 +103,15 @@ for pagenum in range(1,strpage+1):
             #print(main_images1)
             
         try:
+            main_name0 = soup.select(main_name)
             main_name1 = main_name0[0].text
         except IndexError:
             main_name1 = ''
             #print(main_name1)
             
         try:
+            
+            original_price0 = soup.select(original_price)
             original_price1 = original_price0[0].text.replace(',','')
             original_price2 = re.findall(r'[-+]?\d*\.\d+|\d+', original_price1)[0]
         except IndexError:
@@ -129,16 +119,25 @@ for pagenum in range(1,strpage+1):
             #print(original_price1)
             
         try:
-            special_price1 = special_price0[1].text.replace(',','')
+            special_price0 = soup.select(special_price)
+            special_price1 = special_price0[0].text.replace(',','')
             special_price2 = re.findall(r'[-+]?\d*\.\d+|\d+', special_price1)[0]
         except IndexError:
             special_price2 = ''
             #print(special_price1)
             
         try:
+            file0 = soup.select(file)
             file1 =  file0[0].text.strip('\n')
         except IndexError:
             file1 = ''
+            #print(file1)
+            
+        try:
+            specification0 = soup.select(specification)
+            specification1 =  specification0[0].text.strip('\n')
+        except IndexError:
+            specification1 = ''
             #print(file1)
         
         nowurl = allurl0[allprod].get('href')
@@ -158,8 +157,8 @@ for pagenum in range(1,strpage+1):
         '''
         try:
             # success
-            cursor.execute('INSERT INTO ' + ' books (main_images, main_name, original_price, special_price, file, url, time) ' + ' VALUES (%s,%s,%s,%s,%s,%s,NOW()) ' ,
-                           ( str(main_images1), str(main_name1), str(original_price2),str(special_price2), str(file1), str(nowurl) ) ) 
+            cursor.execute('INSERT INTO ' + ' teamfarmers (main_images, main_name, original_price, special_price, file, url ,specification, time) ' + ' VALUES (%s,%s,%s,%s,%s,%s,%s,NOW()) ' ,
+                           ( str(main_images1), str(main_name1), str(original_price2),str(special_price2), str(file1), str(nowurl) ,str(specification1) ) ) 
             # success
             # 執行sql語法
             db.commit()
@@ -171,6 +170,6 @@ for pagenum in range(1,strpage+1):
             db.close()
             # 關閉與資料庫的連接
         #time.sleep(1) #休息兩秒
-    
+
 driver.quit()  # 關閉瀏覽器
 print('資料抓取日期：' + now)

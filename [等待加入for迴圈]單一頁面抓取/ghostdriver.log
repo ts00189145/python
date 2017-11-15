@@ -1,100 +1,12 @@
-[INFO  - 2017-10-02T09:04:29.087Z] GhostDriver - Main - running on port 53129
-[INFO  - 2017-10-02T09:04:30.201Z] Session [b3177250-a750-11e7-8714-cfc5f18d7262] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
-[INFO  - 2017-10-02T09:04:30.201Z] Session [b3177250-a750-11e7-8714-cfc5f18d7262] - page.customHeaders:  - {}
-[INFO  - 2017-10-02T09:04:30.201Z] Session [b3177250-a750-11e7-8714-cfc5f18d7262] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-7-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2017-10-02T09:04:30.201Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: b3177250-a750-11e7-8714-cfc5f18d7262
-[ERROR - 2017-10-02T09:04:30.808Z] Session [b3177250-a750-11e7-8714-cfc5f18d7262] - page.onError - msg: uncaught at R 
- at T 
- at x 
- at o 
- request@https://www.food123.com.tw/static/js/main.0a29e2f8.js:20:20599
-https://www.food123.com.tw/static/js/main.0a29e2f8.js:7:53914
-https://www.food123.com.tw/static/js/main.0a29e2f8.js:24:23852
-E@https://www.food123.com.tw/static/js/main.0a29e2f8.js:19:36729
-b@https://www.food123.com.tw/static/js/main.0a29e2f8.js:19:35675
-l@https://www.food123.com.tw/static/js/main.0a29e2f8.js:19:34438
-n@https://www.food123.com.tw/static/js/main.0a29e2f8.js:19:35074
-https://www.food123.com.tw/static/js/main.0a29e2f8.js:19:36651
-n@https://www.food123.com.tw/static/js/main.0a29e2f8.js:19:20906
-i@https://www.food123.com.tw/static/js/main.0a29e2f8.js:19:41924
-r@https://www.food123.com.tw/static/js/main.0a29e2f8.js:19:41823
-https://www.food123.com.tw/static/js/main.0a29e2f8.js:4:32063
-t@https://www.food123.com.tw/static/js/main.0a29e2f8.js:4:30432
-https://www.food123.com.tw/static/js/main.0a29e2f8.js:39:19842
-loadCoupon@https://www.food123.com.tw/static/js/main.0a29e2f8.js:7:297534
-value@https://www.food123.com.tw/static/js/main.0a29e2f8.js:7:298243
-notifyAll@https://www.food123.com.tw/static/js/main.0a29e2f8.js:17:53915
-close@https://www.food123.com.tw/static/js/main.0a29e2f8.js:35:3189
-closeAll@https://www.food123.com.tw/static/js/main.0a29e2f8.js:6:45318
-perform@https://www.food123.com.tw/static/js/main.0a29e2f8.js:6:44811
-s@https://www.food123.com.tw/static/js/main.0a29e2f8.js:17:49317
-perform@https://www.food123.com.tw/static/js/main.0a29e2f8.js:6:44724
-batchedUpdates@https://www.food123.com.tw/static/js/main.0a29e2f8.js:34:53727
-o@https://www.food123.com.tw/static/js/main.0a29e2f8.js:3:54071
-_renderNewRootComponent@https://www.food123.com.tw/static/js/main.0a29e2f8.js:17:50587
-_renderSubtreeIntoContainer@https://www.food123.com.tw/static/js/main.0a29e2f8.js:17:51593
-render@https://www.food123.com.tw/static/js/main.0a29e2f8.js:17:51724
-w@https://www.food123.com.tw/static/js/main.0a29e2f8.js:23:55739
-https://www.food123.com.tw/static/js/main.0a29e2f8.js:23:28247
-t@https://www.food123.com.tw/static/js/main.0a29e2f8.js:1:111
-https://www.food123.com.tw/static/js/main.0a29e2f8.js:1:507
-t@https://www.food123.com.tw/static/js/main.0a29e2f8.js:1:111
-https://www.food123.com.tw/static/js/main.0a29e2f8.js:1:196
-global code@https://www.food123.com.tw/static/js/main.0a29e2f8.js:1:200
+[INFO  - 2017-11-01T01:58:25.700Z] GhostDriver - Main - running on port 50340
+[INFO  - 2017-11-01T01:58:26.852Z] Session [26891270-bea8-11e7-a802-5b6804c7dfad] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-11-01T01:58:26.852Z] Session [26891270-bea8-11e7-a802-5b6804c7dfad] - page.customHeaders:  - {}
+[INFO  - 2017-11-01T01:58:26.852Z] Session [26891270-bea8-11e7-a802-5b6804c7dfad] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-7-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-11-01T01:58:26.852Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 26891270-bea8-11e7-a802-5b6804c7dfad
+[ERROR - 2017-11-01T01:58:28.076Z] Session [26891270-bea8-11e7-a802-5b6804c7dfad] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-02T09:04:30.808Z] Session [b3177250-a750-11e7-8714-cfc5f18d7262] - page.onError - stack:
-  f (https://www.food123.com.tw/static/js/main.0a29e2f8.js:3)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-02T09:04:30.825Z] Session [b3177250-a750-11e7-8714-cfc5f18d7262] - page.onError - msg: ReferenceError: Can't find variable: ga
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-02T09:04:30.825Z] Session [b3177250-a750-11e7-8714-cfc5f18d7262] - page.onError - stack:
-  value (https://www.food123.com.tw/static/js/main.0a29e2f8.js:7)
-  (anonymous function) (:0)
-  (anonymous function) (https://www.food123.com.tw/static/js/main.0a29e2f8.js:7)
-  notifyAll (https://www.food123.com.tw/static/js/main.0a29e2f8.js:17)
-  close (https://www.food123.com.tw/static/js/main.0a29e2f8.js:3)
-  closeAll (https://www.food123.com.tw/static/js/main.0a29e2f8.js:6)
-  perform (https://www.food123.com.tw/static/js/main.0a29e2f8.js:6)
-  perform (https://www.food123.com.tw/static/js/main.0a29e2f8.js:3)
-  E (https://www.food123.com.tw/static/js/main.0a29e2f8.js:3)
-  close (https://www.food123.com.tw/static/js/main.0a29e2f8.js:3)
-  closeAll (https://www.food123.com.tw/static/js/main.0a29e2f8.js:6)
-  perform (https://www.food123.com.tw/static/js/main.0a29e2f8.js:6)
-  perform (https://www.food123.com.tw/static/js/main.0a29e2f8.js:3)
-  E (https://www.food123.com.tw/static/js/main.0a29e2f8.js:3)
-  (anonymous function) (:0)
-  closeAll (https://www.food123.com.tw/static/js/main.0a29e2f8.js:6)
-  perform (https://www.food123.com.tw/static/js/main.0a29e2f8.js:6)
-  batchedUpdates (https://www.food123.com.tw/static/js/main.0a29e2f8.js:34)
-  o (https://www.food123.com.tw/static/js/main.0a29e2f8.js:3)
-  _renderNewRootComponent (https://www.food123.com.tw/static/js/main.0a29e2f8.js:17)
-  _renderSubtreeIntoContainer (https://www.food123.com.tw/static/js/main.0a29e2f8.js:17)
-  render (https://www.food123.com.tw/static/js/main.0a29e2f8.js:17)
-  w (https://www.food123.com.tw/static/js/main.0a29e2f8.js:23)
-  (anonymous function) (https://www.food123.com.tw/static/js/main.0a29e2f8.js:23)
-  t (https://www.food123.com.tw/static/js/main.0a29e2f8.js:1)
-  (anonymous function) (https://www.food123.com.tw/static/js/main.0a29e2f8.js:1)
-  t (https://www.food123.com.tw/static/js/main.0a29e2f8.js:1)
-  (anonymous function) (https://www.food123.com.tw/static/js/main.0a29e2f8.js:1)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-02T09:04:32.524Z] Session [b3177250-a750-11e7-8714-cfc5f18d7262] - page.onError - msg: ReferenceError: Can't find variable: ga
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-02T09:04:32.525Z] Session [b3177250-a750-11e7-8714-cfc5f18d7262] - page.onError - stack:
-  value (https://www.food123.com.tw/static/js/main.0a29e2f8.js:7)
-  (anonymous function) (:0)
-  n (https://www.food123.com.tw/static/js/main.0a29e2f8.js:7)
-  (anonymous function) (https://www.food123.com.tw/static/js/main.0a29e2f8.js:7)
-  forEach (:0)
-  i (https://www.food123.com.tw/static/js/main.0a29e2f8.js:7)
-  E (https://www.food123.com.tw/static/js/main.0a29e2f8.js:11)
-  (anonymous function) (https://www.food123.com.tw/static/js/main.0a29e2f8.js:11)
-  n (https://www.food123.com.tw/static/js/main.0a29e2f8.js:7)
-  L (https://www.food123.com.tw/static/js/main.0a29e2f8.js:11)
-  x (https://www.food123.com.tw/static/js/main.0a29e2f8.js:11)
+[ERROR - 2017-11-01T01:58:28.077Z] Session [26891270-bea8-11e7-a802-5b6804c7dfad] - page.onError - stack:
+  q (http://connect.facebook.net/en_US/fbevents.js:24)
 
   phantomjs://platform/console++.js:263 in error

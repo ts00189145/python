@@ -4,13 +4,14 @@ import time
 from bs4 import BeautifulSoup
 #使用BeauitfulSoup
 from urllib.request import urlopen
+import re
 
 now_data = time.strftime("%Y-%m-%d")
 now_time = time.strftime("%H:%M:%S")
 now = now_data + ' ' + now_time
 #取出今天日期、時間，並整成變數now
 
-url0 = 'http://www.books.com.tw/web/sys_midm/food/1017?loc=P_002_1_003'
+url0 = 'http://www.books.com.tw/products/N010555259?loc=P_005_001'
 
 pageSource = urlopen(url0)
 
@@ -58,11 +59,13 @@ except IndexError:
     print(main_name1)
 try:
     original_price1 = original_price0[0].text
+    original_price2 = re.findall('[0-9]+',original_price1)
 except IndexError:
     original_price1 = 'Null'
     print(original_price1)
 try:
     special_price1 =  special_price0[1].text
+    special_price2 = re.findall('[0-9]+',special_price1)
 except IndexError:
     special_price1 = 'Null'
     print(special_price1)

@@ -20,7 +20,8 @@ db = pymysql.connect(
 cursor = db.cursor()
 
 
-url = 'http://data.tycg.gov.tw/api/v1/rest/datastore/54f0362a-2fac-46ab-9fae-2d9b04958aaa?format=csv'
+#url = 'http://data.tycg.gov.tw/api/v1/rest/datastore/54f0362a-2fac-46ab-9fae-2d9b04958aaa?format=csv'
+url = 'http://file.data.gov.tw/event/dataset.csv'
 #抓回資料
 data = pd.read_csv(url)
 
@@ -35,23 +36,12 @@ now = now_data + ' ' + now_time
 #尋找所有的欄位名稱 取出了欄位名稱之後，然後呢？
 indexnum = len(data.T.index)
 for title in range(0,indexnum):
-    print("'" + data.T.index[title] + "'" + ' varchar(765) DEFAULT NULL')
+    print(data.T.index[title])
     #print(data.T.index[title])
 
+dict0 = {}
 for titlename in range(0,indexnum):
-    print( Title + indexnum = data.T.index[title])
-
-
-cursor.execute('DROP TABLES IF EXISTS SAMPLEDB;')
-
-
-
-db.close()
-
-
-
-
-
+    print(data.T.index[title])
 
 
 organ = data.T.loc['資料集提供機關']
@@ -66,6 +56,16 @@ for i in range(len(data)):
     #print(i)
     #input_to_db(organ,dataname,browse,download,score,i)
     cursor.execute('insert into '+ ' data01 (organ, dataname, browse, download, score, data )' + 
+                                             ' values( %s, %s, %s, %s, %s, %s)', 
+                   ( 
+                    str( organ.iloc[i] ) ,
+                    str( dataname.iloc[i] ),
+                    str( browse.iloc[i]),
+                    str( download.iloc[i]) ,
+                    str( score.iloc[i]) ,                    
+                    str( now) ) )
+    
+    print('insert into '+ ' data01 (organ, dataname, browse, download, score, data )' + 
                                              ' values( %s, %s, %s, %s, %s, %s)', 
                    ( 
                     str( organ.iloc[i] ) ,

@@ -1,209 +1,55 @@
-[INFO  - 2017-10-24T06:11:53.711Z] GhostDriver - Main - running on port 52043
-[INFO  - 2017-10-24T06:11:54.844Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
-[INFO  - 2017-10-24T06:11:54.844Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.customHeaders:  - {}
-[INFO  - 2017-10-24T06:11:54.845Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-7-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2017-10-24T06:11:54.845Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 3be7dd80-b882-11e7-92e7-3d9fa06d7d78
-[ERROR - 2017-10-24T06:11:55.747Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
+[INFO  - 2017-11-14T02:16:36.575Z] GhostDriver - Main - running on port 50613
+[INFO  - 2017-11-14T02:16:37.719Z] Session [d81e4a30-c8e1-11e7-81e6-3db74cc8aa61] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-11-14T02:16:37.719Z] Session [d81e4a30-c8e1-11e7-81e6-3db74cc8aa61] - page.customHeaders:  - {}
+[INFO  - 2017-11-14T02:16:37.719Z] Session [d81e4a30-c8e1-11e7-81e6-3db74cc8aa61] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-7-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-11-14T02:16:37.719Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: d81e4a30-c8e1-11e7-81e6-3db74cc8aa61
+[INFO  - 2017-11-14T02:21:36.582Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-14T02:26:36.614Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-14T02:31:36.656Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[ERROR - 2017-11-14T02:32:19.855Z] Session [d81e4a30-c8e1-11e7-81e6-3db74cc8aa61] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'e.forEach')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:11:55.748Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
+[ERROR - 2017-11-14T02:32:19.855Z] Session [d81e4a30-c8e1-11e7-81e6-3db74cc8aa61] - page.onError - stack:
+  (anonymous function) (http://jci.book.com.tw/jss/br/br_screen.min.js?v=171107:1)
+  trigger (http://jci.book.com.tw/jss/jquery/jquery-1.6.4.min.js:3)
+  (anonymous function) (http://jci.book.com.tw/jss/jquery/jquery-1.6.4.min.js:3)
+  each (http://jci.book.com.tw/jss/jquery/jquery-1.6.4.min.js:2)
+  each (http://jci.book.com.tw/jss/jquery/jquery-1.6.4.min.js:2)
+  trigger (http://jci.book.com.tw/jss/jquery/jquery-1.6.4.min.js:3)
+  (anonymous function) (http://jci.book.com.tw/jss/jquery/jquery-1.6.4.min.js:3)
+  (anonymous function) (:3)
+  f (http://jci.book.com.tw/jss/books/head.min.js:6)
+  (anonymous function) (http://jci.book.com.tw/jss/books/head.min.js:6)
+  (anonymous function) (http://jci.book.com.tw/jss/books/head.min.js:6)
+  o (http://jci.book.com.tw/jss/books/head.min.js:6)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:11:59.278Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
+[INFO  - 2017-11-14T02:36:36.692Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-14T02:41:36.701Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[ERROR - 2017-11-14T02:44:08.570Z] Session [d81e4a30-c8e1-11e7-81e6-3db74cc8aa61] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'e.forEach')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:11:59.278Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
+[ERROR - 2017-11-14T02:44:08.570Z] Session [d81e4a30-c8e1-11e7-81e6-3db74cc8aa61] - page.onError - stack:
+  (anonymous function) (http://jci.book.com.tw/jss/br/br_screen.min.js?v=171107:1)
+  trigger (http://jci.book.com.tw/jss/jquery/jquery-1.6.4.min.js:3)
+  (anonymous function) (http://jci.book.com.tw/jss/jquery/jquery-1.6.4.min.js:3)
+  each (http://jci.book.com.tw/jss/jquery/jquery-1.6.4.min.js:2)
+  each (http://jci.book.com.tw/jss/jquery/jquery-1.6.4.min.js:2)
+  trigger (http://jci.book.com.tw/jss/jquery/jquery-1.6.4.min.js:3)
+  (anonymous function) (http://jci.book.com.tw/jss/jquery/jquery-1.6.4.min.js:3)
+  (anonymous function) (:3)
+  f (http://jci.book.com.tw/jss/books/head.min.js:6)
+  (anonymous function) (http://jci.book.com.tw/jss/books/head.min.js:6)
+  (anonymous function) (http://jci.book.com.tw/jss/books/head.min.js:6)
+  o (http://jci.book.com.tw/jss/books/head.min.js:6)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:00.853Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:00.853Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:02.667Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:02.667Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:05.259Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:05.260Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:06.873Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:06.873Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:08.432Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:08.432Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:09.862Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:09.862Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:11.142Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:11.142Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:13.063Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:13.063Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:14.597Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:14.597Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:16.161Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:16.161Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:18.029Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:18.029Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:19.270Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:19.270Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:20.564Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:20.565Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:21.848Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:21.848Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:23.596Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:23.596Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:25.191Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:25.191Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:26.990Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:26.990Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:28.547Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:28.547Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:29.941Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:29.941Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:31.518Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:31.518Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:33.059Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:33.059Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:34.321Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:34.321Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:36.142Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:36.142Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:37.833Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:37.833Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:39.027Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:39.027Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:40.644Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:40.645Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:42.195Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - msg: Facebook Pixel Error: Error: Duplicate Pixel ID: 1617825791788311
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-10-24T06:12:42.195Z] Session [3be7dd80-b882-11e7-92e7-3d9fa06d7d78] - page.onError - stack:
-  p (http://connect.facebook.net/en_US/fbevents.js:25)
-
-  phantomjs://platform/console++.js:263 in error
-[INFO  - 2017-10-24T06:16:53.720Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-14T02:46:36.731Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-14T02:51:36.764Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-14T02:56:36.764Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-14T03:01:36.806Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-14T03:06:36.837Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-14T03:11:36.850Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-14T03:16:36.882Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-14T03:21:36.913Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-11-14T03:26:36.955Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
